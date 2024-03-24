@@ -1,4 +1,4 @@
-import {Carousel, Row, Image, Col} from "react-bootstrap";
+import {Carousel, Row, Image, Col, Placeholder} from "react-bootstrap";
 import {TwitterTimelineEmbed} from "react-twitter-embed";
 import "./Home.css";
 
@@ -54,12 +54,12 @@ const Home = () => (
 );
 
 const TwitterPlaceholder = () => (
-    <p className="placeholder-wave">
-      <span className="placeholder placeholder-lg w-100"></span>
-      <span className="placeholder placeholder-lg w-75"></span>
-      <span className="placeholder placeholder-lg w-100"></span>
-      <span className="placeholder placeholder-lg w-50"></span>
-    </p>
+    <Placeholder as="p" animation="wave">
+      <Placeholder className="w-100" size="lg" />
+      <Placeholder className="w-75" size="lg" />
+      <Placeholder className="w-100" size="lg" />
+      <Placeholder className="w-50" size="lg" />
+    </Placeholder>
 );
 
 export default Home;
