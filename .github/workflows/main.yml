@@ -39,11 +39,11 @@ jobs:
         python-version: 3.9
     - name: Config AWS Cred
       run: |
-        pip install awscli
+        pip install awscliv2
         aws configure set region eu-west-1
         aws configure set output json
-        aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY }} 
-        aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_KEY }}
+        aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }} 
+        aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     - name: deploy with s3 sync and Invalidate CloudFront cache
       run: |
         npm install
