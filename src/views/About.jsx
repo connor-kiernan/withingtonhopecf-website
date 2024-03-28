@@ -9,18 +9,22 @@ const About = () => {
   const founderDetails = [
     {
       name: "John Lennon",
+      role: "Manager",
       description: description
     },
     {
       name: "Paul McCartney",
+      role: "Treasurer",
       description: description
     },
     {
       name: "George Harrison",
+      role: "Captain",
       description: description
     },
     {
       name: "Ringo Starr",
+      role: "Assistant Manager",
       description: description
     }
   ];
@@ -44,9 +48,10 @@ const About = () => {
           porttitor. Cras fermentum odio eu feugiat. Sed enim ut sem viverra. Justo eget magna fermentum iaculis eu non diam
           phasellus. At risus viverra adipiscing at in tellus integer feugiat.
         </p>
+        <h2 className="mt-4">The People behind the club</h2>
         <div id="founderContainer">
           {founderDetails.map((detail) => (
-              <FounderRow key={detail.name} founderName={detail.name} founderDescription={detail.description} />
+              <FounderRow key={detail.name} founderName={detail.name} founderRole={detail.role} founderDescription={detail.description} />
           ))}
         </div>
       </>);
