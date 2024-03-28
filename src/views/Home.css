@@ -1,0 +1,7 @@
+.carousel img {
+  aspect-ratio: 21/9;
+}
+
+.twitterContainer {
+  min-height: 70vh;
+}
