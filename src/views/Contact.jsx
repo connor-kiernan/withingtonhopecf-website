@@ -52,10 +52,10 @@ const Contact = () => {
               <ListGroup.Item href="mailto:fake@email.com" action={true}>
                   <i className="bi fa-regular fa-envelope" /> fake@email.com
                 </ListGroup.Item>
-              <ListGroup.Item href="https://twitter.com/withingtonhope" action={true}>
+              <ListGroup.Item href="https://twitter.com/withingtonhope" target="_blank" rel="noopener noreferrer" action={true}>
                   <i className="fa-brands fa-twitter" aria-label="twitter"/> @WithingtonHope
               </ListGroup.Item>
-              <ListGroup.Item href="https://www.instagram.com/withingtonhope" action={true}>
+              <ListGroup.Item href="https://www.instagram.com/withingtonhope" target="_blank" rel="noopener noreferrer" action={true}>
                 <i className="fa-brands fa-instagram" aria-label="instagram" /> withingtonhope
               </ListGroup.Item>
             </ListGroup>

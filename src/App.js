@@ -1,12 +1,13 @@
-import './App.css';
-import Container from 'react-bootstrap/Container';
-import Header from './master/Header.jsx'
+import "./App.css";
+import Container from "react-bootstrap/Container";
+import Header from "./master/Header.jsx";
 import {Route, Routes} from "react-router-dom";
 import Home from "./views/Home";
 import About from "./views/About";
 import Contact from "./views/Contact";
 import NotFound from "./views/NotFound";
 import Footer from "./master/Footer";
+import Players from "./views/Players";
 
 const App = () => {
   return (
@@ -19,7 +20,7 @@ const App = () => {
                 <Route path="/" element={<Home/>}/>
                 <Route index element={<Home/>}/>
                 <Route path="about" element={<About/>}/>
-                {/*<Route path="players" element={<Players/>}/>*/}
+                <Route path="players" element={<Players/>}/>
                 {/*<Route path="fixtures" element={<Fixtures/>}/>*/}
                 <Route path="contact" element={<Contact/>}/>
                 <Route path="*" element={<NotFound />}/>
