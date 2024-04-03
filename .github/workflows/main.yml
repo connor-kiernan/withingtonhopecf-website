@@ -5,6 +5,10 @@ on:
     branches:
     - main
 
+env:
+  REACT_APP_HAPI_URL: ${{ secrets.HAPI_URL }}
+  REACT_APP_HOSTED_URL: ${{ secrets.HOST_URL }}
+
 jobs:
   install:
     runs-on: ubuntu-latest
