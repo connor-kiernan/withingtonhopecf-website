@@ -13,11 +13,9 @@ const Date = ({date, withTime=true}) => {
       hour12: false
     }
   }
-  const dateString = date.toLocaleString('en-GB', dateOptions).replace(/\d{1,2}/, function(match) {
+  return date.toLocaleString('en-GB', dateOptions).replace(/\d{1,2}/, function (match) {
     return addOrdinalSuffix(parseInt(match));
   });
-
-  return (<p>{dateString}</p>);
 }
 
 export default Date;

@@ -1,6 +1,6 @@
 const MatchesNavContainer = ({fixturesContainer, resultsContainer}) => (
   <>
-    <ul className="nav nav-pills mb-5" role="tablist">
+    <ul className="nav nav-pills mb-5 justify-content-center" role="tablist">
       <li className="nav-item" role="presentation">
         <button className="nav-link active" id="fixtures-tab" data-bs-toggle="tab" data-bs-target="#fixtures"
                 type="button" aria-controls="fixtures"><h2 className="mb-0">Fixtures</h2>
