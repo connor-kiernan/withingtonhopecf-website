@@ -8,6 +8,7 @@ import Contact from "./views/Contact";
 import NotFound from "./views/NotFound";
 import Footer from "./master/Footer";
 import Players from "./views/Players";
+import Matches from "./views/Matches";
 
 const App = () => {
   return (
@@ -21,7 +22,7 @@ const App = () => {
                 <Route index element={<Home/>}/>
                 <Route path="about" element={<About/>}/>
                 <Route path="players" element={<Players/>}/>
-                {/*<Route path="fixtures" element={<Fixtures/>}/>*/}
+                <Route path="matches" element={<Matches/>}/>
                 <Route path="contact" element={<Contact/>}/>
                 <Route path="*" element={<NotFound />}/>
               </Routes>

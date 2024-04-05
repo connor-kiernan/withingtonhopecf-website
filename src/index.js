@@ -6,9 +6,11 @@ import reportWebVitals from "./reportWebVitals";
 import {BrowserRouter} from "react-router-dom";
 import {store} from "./app/store";
 import {Provider} from "react-redux";
-import {extendedApiSlice} from "./features/players/playerSlice";
+import {extendedApiSlice as extendedApiSlicePlayer} from "./features/players/playerSlice";
+import {extendedApiSlice as extendedApiSliceMatches} from "./features/matches/matchSlice";
 
-store.dispatch(extendedApiSlice.endpoints.getPlayers.initiate());
+store.dispatch(extendedApiSlicePlayer.endpoints.getPlayers.initiate());
+store.dispatch(extendedApiSliceMatches.endpoints.getMatches.initiate());
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
