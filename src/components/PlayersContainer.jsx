@@ -31,11 +31,7 @@ const PlayersContainer = () => {
     renderedContainer = <p>Unknown error when fetching players: {error}</p>;
   }
 
-  return (
-      <div>
-        {renderedContainer}
-      </div>
-  );
+  return (renderedContainer);
 };
 
 export default PlayersContainer;

@@ -28,9 +28,9 @@ const Header = () => (
                   <LinkContainer to="/players">
                     <Nav.Link className="mx-md-4">Players</Nav.Link>
                   </LinkContainer>
-                  {/*<LinkContainer to="/fixtures">*/}
-                  {/*  <Nav.Link className="mx-md-4">Fixtures</Nav.Link>*/}
-                  {/*</LinkContainer>*/}
+                  <LinkContainer to="/matches">
+                    <Nav.Link className="mx-md-4">Matches</Nav.Link>
+                  </LinkContainer>
                   <LinkContainer to="contact">
                     <Nav.Link className="mx-md-4">Contact</Nav.Link>
                   </LinkContainer>

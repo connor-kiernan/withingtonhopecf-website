@@ -26,7 +26,9 @@ export const selectPlayersResult = extendedApiSlice.endpoints.getPlayers.select(
 
 const selectPlayersData = createSelector(
     selectPlayersResult,
-    playersResult => playersResult.data
+    playersResult => {
+      return playersResult.data
+    }
 );
 
 export const {

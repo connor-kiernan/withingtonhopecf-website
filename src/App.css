@@ -1,6 +1,8 @@
 :root {
   --bs-primary-rgb: 26, 97, 173;
+  --bs-primary: #1c62ad;
   --bs-navbar-active-color: white;
+  --bs-link-color: var(--bs-primary);
 }
 
 #root {
@@ -27,4 +29,8 @@
 .list-group {
   --bs-list-group-active-bg: #1c62ad;
   --bs-list-group-active-border-color: #1c62ad
+}
+
+.nav-pills {
+  --bs-nav-pills-link-active-bg: var(--bs-primary)
 }
