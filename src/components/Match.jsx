@@ -16,7 +16,7 @@ const Match = ({isHomeGame, opponent, address, kickOffDateTime, played, homeGoal
   return (
       <Row className="text-center align-items-center">
         <Col lg={2}>
-          <Date date={kickOffDateTime}/>
+          <p className="mb-lg-0 mb-2"><Date date={kickOffDateTime}/></p>
         </Col>
         <Col>{middleComponent}</Col>
         <Col lg={2} className="text-capitalize">
