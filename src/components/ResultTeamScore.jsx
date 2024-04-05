@@ -12,7 +12,7 @@ const ResultTeamScore = ({team, goals, goalScorers, isAway}) => {
             .map(([player, count]) => (
                 <Fragment key={player + count}>
                   <small className="px-lg-5 ps-1 pe-5">{player}</small>
-                  <small> <i className="fa-regular fa-futbol"></i> x {count}</small>
+                  <small> <i className="fa-regular fa-futbol"></i>{count > 1 ? " x" + count : null}</small>
                 </Fragment>
             )) : null}
           </div>
