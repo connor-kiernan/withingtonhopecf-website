@@ -58,7 +58,7 @@ export const selectNextFixture = createSelector(
 
 export const selectLastResult = createSelector(
     selectResults,
-    results => results[0]
+    results => results[results.length -1]
 )
 
 export const selectFixturesGroupedByMonth = createSelector(

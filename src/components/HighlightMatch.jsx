@@ -25,8 +25,7 @@ const HighlightMatch = ({
           <section className="text-center mt-2 mb-5 mx-n mx-lg-n p-1 py-sm-5 rounded border">
             <h1>{heading}</h1>
             <div className="d-flex justify-content-center">
-              <Date date={kickOffDateTime} withTime={false}/>
-              <p>, {address["line1"] ?? address["postcode"]}</p>
+              <p><Date date={kickOffDateTime} withTime={false}/>, {address["line1"] ?? address["postcode"]}</p>
             </div>
             {middleComponent}
           </section>);
