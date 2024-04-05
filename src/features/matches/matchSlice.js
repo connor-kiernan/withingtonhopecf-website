@@ -56,15 +56,27 @@ export const selectNextFixture = createSelector(
     fixtures => fixtures[0]
 )
 
+export const selectLastResult = createSelector(
+    selectResults,
+    results => results[0]
+)
+
 export const selectFixturesGroupedByMonth = createSelector(
     selectFixtures,
-    fixtures => {
-      return fixtures.reduce((group, fixture) => {
-        const month = fixture["kickOffDateTime"].toLocaleDateString("en-GB", {month: 'long'});
-        (group[month] = group[month] || []).push(fixture);
-
-        return group;
-      }, {});
-    }
+    fixtures => groupByMonth(fixtures)
 )
+
+export const selectResultsGroupedByMonth = createSelector(
+    selectResults,
+    results => groupByMonth(results)
+)
+
+function groupByMonth(matches) {
+  return matches.reduce((group, result) => {
+    const month = result["kickOffDateTime"].toLocaleDateString("en-GB", {month: "long"});
+    (group[month] = group[month] || []).push(result);
+
+    return group;
+  }, {});
+}
 
