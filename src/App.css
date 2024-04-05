@@ -1,6 +1,9 @@
 :root {
   --bs-primary-rgb: 26, 97, 173;
+  --bs-primary: #1c62ad;
   --bs-navbar-active-color: white;
+  --bs-link-color: var(--bs-primary);
+  --bs-link-hover-color: #15508c;
 }
 
 #root {
@@ -27,4 +30,18 @@
 .list-group {
   --bs-list-group-active-bg: #1c62ad;
   --bs-list-group-active-border-color: #1c62ad
+}
+
+.nav-pills {
+  --bs-nav-pills-link-active-bg: var(--bs-primary)
+}
+
+.mx-n {
+  margin: 0 -1rem;
+}
+
+@media (min-width: 992px) {
+  .mx-lg-n {
+    margin: 0 -3rem;
+  }
 }
