@@ -22,7 +22,7 @@ const HighlightMatch = ({
           <NextMatchTime homeTeam={homeTeam} kickOffDateTime={kickOffDateTime} awayTeam={awayTeam}/>;
 
       return (
-          <section className="text-center mt-2 mb-5 mx-n mx-lg-n p-1 py-sm-5 rounded border">
+          <section className="text-center mt-2 mb-5 mx-lg-n p-1 py-sm-5 rounded border">
             <h1>{heading}</h1>
             <div className="d-flex justify-content-center">
               <p><Date date={kickOffDateTime} withTime={false}/>, {address["line1"] ?? address["postcode"]}</p>
