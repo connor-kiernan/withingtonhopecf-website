@@ -1,10 +1,10 @@
-import {Carousel, Row, Image, Col, Placeholder} from "react-bootstrap";
-import {TwitterTimelineEmbed} from "react-twitter-embed";
+import {Carousel, Col, Image, Placeholder, Row} from "react-bootstrap";
+import {TwitterTweetEmbed} from "react-twitter-embed";
 import "./Home.css";
 
 const Home = () => (
     <Row>
-      <Col sm={8}>
+      <Col>
         <Row id="carouselContainer" className="mb-4 justify-content-center">
           <Carousel className="rounded">
             <Carousel.Item className="rounded">
@@ -38,14 +38,12 @@ const Home = () => (
           tristique, tortor mauris molestie elit, et lacinia ipsum quam
         </p>
       </Col>
-      <Col sm={4}>
-        <h3>Latest updates from the Twitter:</h3>
+      <Col lg={4} className="ms-lg-3">
+        <h3>Check out the Twitter:</h3>
         <div className="twitterContainer mb-2">
-          <TwitterTimelineEmbed
-              autoHeight
+          <TwitterTweetEmbed
               placeholder={<TwitterPlaceholder/>}
-              sourceType="url"
-              url="https://twitter.com/withingtonhope"/>
+              tweetId="1776582882447818924"/>
         </div>
       </Col>
     </Row>
@@ -53,6 +51,10 @@ const Home = () => (
 
 const TwitterPlaceholder = () => (
     <Placeholder as="p" animation="wave">
+      <Placeholder className="w-100" size="lg" />
+      <Placeholder className="w-75" size="lg" />
+      <Placeholder className="w-100" size="lg" />
+      <Placeholder className="w-50" size="lg" />
       <Placeholder className="w-100" size="lg" />
       <Placeholder className="w-75" size="lg" />
       <Placeholder className="w-100" size="lg" />
