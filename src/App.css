@@ -36,10 +36,6 @@
   --bs-nav-pills-link-active-bg: var(--bs-primary)
 }
 
-.mx-n {
-  margin: 0 -1rem;
-}
-
 @media (min-width: 992px) {
   .mx-lg-n {
     margin: 0 -3rem;
