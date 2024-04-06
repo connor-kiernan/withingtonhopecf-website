@@ -2,6 +2,11 @@
   aspect-ratio: 21/9;
 }
 
-.twitterContainer {
-  min-height: 70vh;
+div:has(> .twitter-tweet) {
+  display: flex;
+  justify-content: center;
+}
+
+#carouselContainer {
+  margin: 0 -1rem;
 }

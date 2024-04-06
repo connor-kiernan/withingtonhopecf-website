@@ -14,24 +14,22 @@ const App = () => {
   return (
       <>
         <Header/>
-        <Container>
-          <Container className="flex-grow-1 d-flex flex-column justify-content-center">
-            <main className="mt-4">
-              <Routes>
-                <Route path="/" element={<Home/>}/>
-                <Route index element={<Home/>}/>
-                <Route path="about" element={<About/>}/>
-                <Route path="players" element={<Players/>}/>
-                <Route path="matches" element={<Matches/>}/>
-                <Route path="contact" element={<Contact/>}/>
-                <Route path="*" element={<NotFound />}/>
-              </Routes>
-            </main>
-          </Container>
-          <Footer />
+        <Container className="flex-grow-1 d-flex flex-column justify-content-between">
+          <main className="mt-4 d-flex flex-grow-1 flex-column">
+            <Routes>
+              <Route path="/" element={<Home/>}/>
+              <Route index element={<Home/>}/>
+              <Route path="about" element={<About/>}/>
+              <Route path="players" element={<Players/>}/>
+              <Route path="matches" element={<Matches/>}/>
+              <Route path="contact" element={<Contact/>}/>
+              <Route path="*" element={<NotFound/>}/>
+            </Routes>
+          </main>
         </Container>
+        <Footer/>
       </>
-  )
+  );
 };
 
 export default App;
