@@ -3,6 +3,7 @@
   --bs-primary: #1c62ad;
   --bs-navbar-active-color: white;
   --bs-link-color: var(--bs-primary);
+  --bs-link-color-rgb: 26, 97, 173;
   --bs-link-hover-color: #15508c;
 }
 
