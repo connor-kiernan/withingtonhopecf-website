@@ -26,7 +26,7 @@ const Home = () => (
           </Carousel>
         </Row>
         <Row className="fs-4">
-          <p> Welcome to the Withington Hope Hope CF official website.</p>
+          <p> Welcome to the Withington Hope CF official website.</p>
           <p>
             Founded in 2020 by Giorgio Arnetoli, Alex Gunn, Sam Hargraves and Harry Clarke, Withington Hope
             Club de Fútbol are a men's football team based in Manchester.
