@@ -47,7 +47,7 @@ const Home = () => (
         <div className="twitterContainer mb-2">
           <TwitterTweetEmbed
               placeholder={<TwitterPlaceholder/>}
-              tweetId="1776582882447818924"/>
+              tweetId="1779118194629743008"/>
         </div>
       </Col>
     </Row>
