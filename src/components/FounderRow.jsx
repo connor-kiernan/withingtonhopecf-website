@@ -1,16 +1,14 @@
-import {Col, Row} from "react-bootstrap";
+import {Col} from "react-bootstrap";
 import Image from "react-bootstrap/Image";
 
-const FounderRow = ({founderName, founderRole, founderDescription}) => (
-    <Row className="mt-4 align-items-center">
-      <Col sm={4} lg={2}>
-        <Image src="/images/blankProfile.png" alt={founderName} fluid rounded/>
-      </Col>
-      <Col>
-        <h2 className="mt-3">{founderName} - {founderRole}</h2>
-        <p>{founderDescription}</p>
-      </Col>
-    </Row>
+const FounderRow = ({founderName, founderRole, founderImage, founderDescription}) => (
+    <Col className="text-center">
+      <Image src={founderImage ? `${process.env.REACT_APP_HOSTED_URL}/images/upload/players/profile/away/${founderImage}`
+          : "/images/blankProfile.png"} alt={`A picture of ${founderName}`} fluid rounded/>
+      <h2 className="mt-3">{founderName}</h2>
+      <h3 className="text-secondary">{founderRole}</h3>
+      <p>{founderDescription}</p>
+    </Col>
 );
 
 export default FounderRow;
