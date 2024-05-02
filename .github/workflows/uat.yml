@@ -1,14 +1,14 @@
-name: Upload Website
+name: UAT - Upload Website
 
 on:
   workflow_dispatch:
   push:
     branches:
-    - main
+    - uat
 
 env:
-  REACT_APP_HAPI_URL: ${{ secrets.HAPI_URL }}
-  REACT_APP_HOSTED_URL: ${{ secrets.HOST_URL }}
+  REACT_APP_HAPI_URL: ${{ secrets.UAT_HAPI_URL }}
+  REACT_APP_HOSTED_URL: ${{ secrets.UAT_HOST_URL }}
 
 jobs:
   install:
@@ -53,5 +53,5 @@ jobs:
       run: |
         npm install
         npm run build
-        aws s3 sync ./build s3://${{ secrets.AWS_S3_BUCKET }}/
-        aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
+        aws s3 sync ./build s3://${{ secrets.UAT_AWS_S3_BUCKET }}/
+        aws cloudfront create-invalidation --distribution-id ${{ secrets.UAT_CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"

@@ -7,6 +7,10 @@ const FixtureContainer = () => {
   const nextFixture = useSelector(selectNextFixture);
   const fixturesGroupedByMonth = useSelector(selectFixturesGroupedByMonth);
 
+  if (!nextFixture) {
+    return <><p>Sorry, there are no upcoming fixtures to display</p><p>Check back soon!</p></>
+  }
+
   return (
       <>
         <HighlightMatch {...nextFixture}/>
