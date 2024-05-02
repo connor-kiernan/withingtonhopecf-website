@@ -7,6 +7,10 @@ const ResultsContainer = () => {
   const lastResult = useSelector(selectLastResult);
   const resultsGroupedByMonth = useSelector(selectResultsGroupedByMonth);
 
+  if (!lastResult) {
+    return <><p>Sorry, there are no results to display</p><p>Check back soon!</p></>
+  }
+
   return (
       <>
         <HighlightMatch  {...lastResult}/>
