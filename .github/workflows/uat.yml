@@ -1,4 +1,4 @@
-name: Upload Website
+name: UAT - Upload Website
 
 on:
   workflow_dispatch:
