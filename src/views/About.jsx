@@ -37,7 +37,7 @@ const About = () => (
         <h2 className="mt-4">The People behind the club</h2>
         <Row xs={1} md={2}>
           <FounderRow founderName="Giorgio Arnetoli" founderRole="Manager/Club Captain" founderImage="giorgioArnetoli.png"/>
-          <FounderRow founderName="Alex Gunn" founderRole="Vice Captain/League Secretary"/>
+          <FounderRow founderName="Alex Gunn" founderRole="Vice Captain/League Secretary" founderImage="alexGunn.png"/>
           <FounderRow founderName="Anthony Cockbain" founderRole="Vice Captain" />
           <FounderRow founderName="Nathan Salley" founderRole="Vice Captain/Kit Man" />
           <FounderRow founderName="Ollie Holgate" founderRole="Match Day Secretary" founderImage="ollieHolgate.png" />
