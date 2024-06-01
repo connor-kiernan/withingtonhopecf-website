@@ -35,7 +35,7 @@ const About = () => (
       </Row>
       <Row>
         <h2 className="mt-4">The People behind the club</h2>
-        <Row xs={2} md={3} lg={4} xl={4} className="justify-content-center">
+        <Row xs={2} sm={3} lg={4} xl={5} className="justify-content-evenly">
           <VipCard name="Giorgio Arnetoli" role="Manager" image="giorgioArnetoli.png"/>
           <VipCard name="Eoghan Campbell" role="Captain" image="eoghanCampbell.png"/>
           <VipCard name="Anthony Cockbain" role="Vice Captain/ Social Secretary" />
@@ -44,6 +44,7 @@ const About = () => (
           <VipCard name="Nathan Salley" role="Kit Man" />
           <VipCard name="Ollie Holgate" role="Match Day Secretary" image="ollieHolgate.png" />
           <VipCard name="Joe Shaw" role="Treasurer" image="joeShaw.png" />
+          <VipCard name="Zico D'Arcy" role="Social Secretary" image="zicoD'Arcy.png" />
         </Row>
       </Row>
     </>
