@@ -1,4 +1,4 @@
-import FounderRow from "../components/FounderRow";
+import VipCard from "../components/VipCard";
 import "./About.css";
 import {Row} from "react-bootstrap";
 
@@ -35,13 +35,15 @@ const About = () => (
       </Row>
       <Row>
         <h2 className="mt-4">The People behind the club</h2>
-        <Row xs={1} md={2}>
-          <FounderRow founderName="Giorgio Arnetoli" founderRole="Manager/Club Captain" founderImage="giorgioArnetoli.png"/>
-          <FounderRow founderName="Alex Gunn" founderRole="Vice Captain/League Secretary" founderImage="alexGunn.png"/>
-          <FounderRow founderName="Anthony Cockbain" founderRole="Vice Captain" />
-          <FounderRow founderName="Nathan Salley" founderRole="Vice Captain/Kit Man" />
-          <FounderRow founderName="Ollie Holgate" founderRole="Match Day Secretary" founderImage="ollieHolgate.png" />
-          <FounderRow founderName="Joe Shaw" founderRole="Treasurer" founderImage="joeShaw.png" />
+        <Row xs={2} md={3} lg={4} xl={4} className="justify-content-center">
+          <VipCard name="Giorgio Arnetoli" role="Manager" image="giorgioArnetoli.png"/>
+          <VipCard name="Eoghan Campbell" role="Captain" image="eoghanCampbell.png"/>
+          <VipCard name="Anthony Cockbain" role="Vice Captain/ Social Secretary" />
+          <VipCard name="Scott Buckley" role="Vice Captain" image="scottBuckley.png"/>
+          <VipCard name="Alex Gunn" role="Vice Captain/ League Secretary" image="alexGunn.png"/>
+          <VipCard name="Nathan Salley" role="Kit Man" />
+          <VipCard name="Ollie Holgate" role="Match Day Secretary" image="ollieHolgate.png" />
+          <VipCard name="Joe Shaw" role="Treasurer" image="joeShaw.png" />
         </Row>
       </Row>
     </>
