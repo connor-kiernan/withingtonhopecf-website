@@ -25,7 +25,7 @@ const Home = () => (
             </Carousel.Item>
           </Carousel>
         </Row>
-        <Row className="fs-4">
+        <Row className="fs-5">
           <p> Welcome to the Withington Hope CF official website.</p>
           <p>
             Founded in 2020 by Giorgio Arnetoli, Alex Gunn, Sam Hargraves and Harry Clarke, Withington Hope
@@ -38,7 +38,7 @@ const Home = () => (
         </Row>
         <Row>
           <Col xs={12} md={6}>
-            <Button href="/about" className="fs-4">Read our full story</Button>
+            <Button href="/about" className="fs-5">Read our full story</Button>
           </Col>
         </Row>
       </Col>
@@ -47,7 +47,7 @@ const Home = () => (
         <div className="twitterContainer mb-2">
           <TwitterTweetEmbed
               placeholder={<TwitterPlaceholder/>}
-              tweetId="1784189633930092901"/>
+              tweetId="1794711993431265773"/>
         </div>
       </Col>
     </Row>
