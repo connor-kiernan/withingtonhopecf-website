@@ -34,7 +34,7 @@ const About = () => (
         </p>
       </Row>
       <Row>
-        <h2 className="mt-4">The People behind the club</h2>
+        <h2 id="people" className="mt-4">The People behind the club</h2>
         <Row xs={2} sm={3} lg={4} xl={5} className="justify-content-evenly">
           <VipCard name="Giorgio Arnetoli" role="Manager" image="giorgioArnetoli.png"/>
           <VipCard name="Eoghan Campbell" role="Captain" image="eoghanCampbell.png"/>
