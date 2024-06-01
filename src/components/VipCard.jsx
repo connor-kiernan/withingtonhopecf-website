@@ -9,7 +9,7 @@ const VipCard = ({name, role, image}) => {
         <Card className="border-0">
           <Card.Img variant="top" src={imgSrc} alt={`A picture of ${name}`}/>
           <Card.Body>
-            <Card.Title as="h2">{name}</Card.Title>
+            <Card.Title as="h3">{name}</Card.Title>
             <Card.Subtitle className="text-body-secondary">{role}</Card.Subtitle>
           </Card.Body>
         </Card>
