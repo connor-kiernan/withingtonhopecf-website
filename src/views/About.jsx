@@ -1,4 +1,4 @@
-import VipCard from "../components/VipCard";
+import VipCard from "../components/players/VipCard";
 import "./About.css";
 import {Row} from "react-bootstrap";
 

@@ -8,9 +8,11 @@ import {store} from "./app/store";
 import {Provider} from "react-redux";
 import {extendedApiSlice as extendedApiSlicePlayer} from "./features/players/playerSlice";
 import {extendedApiSlice as extendedApiSliceMatches} from "./features/matches/matchSlice";
+import {extendedApiSlice as extendedApiSliceConfig} from "./features/config/configSlice";
 
 store.dispatch(extendedApiSlicePlayer.endpoints.getPlayers.initiate());
 store.dispatch(extendedApiSliceMatches.endpoints.getMatches.initiate());
+store.dispatch(extendedApiSliceConfig.endpoints.getConfig.initiate());
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

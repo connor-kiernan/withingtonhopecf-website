@@ -1,4 +1,4 @@
-import {selectFixturesGroupedByMonth, selectNextFixture} from "../features/matches/matchSlice";
+import {selectFixturesGroupedByMonth, selectNextFixture} from "../../features/matches/matchSlice";
 import {useSelector} from "react-redux";
 import MatchGroup from "./MatchGroup";
 import HighlightMatch from "./HighlightMatch";

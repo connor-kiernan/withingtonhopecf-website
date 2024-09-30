@@ -1,4 +1,4 @@
-import PlayersContainer from "../components/PlayersContainer";
+import PlayersContainer from "../components/players/PlayersContainer";
 
 const Players = () => (
     <>

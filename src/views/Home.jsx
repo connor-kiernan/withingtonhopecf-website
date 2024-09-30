@@ -1,29 +1,13 @@
-import {Button, Carousel, Col, Image, Placeholder, Row} from "react-bootstrap";
-import {TwitterTweetEmbed} from "react-twitter-embed";
+import {Button, Col, Row} from "react-bootstrap";
 import "./Home.css";
+import TwitterContainer from "../components/TwitterContainer";
+import CarouselContainer from "../components/carousel/CarouselContainer";
 
 const Home = () => (
     <Row>
       <Col className="mb-4">
         <Row id="carouselContainer" className="mb-4 justify-content-center">
-          <Carousel className="rounded">
-            <Carousel.Item className="rounded">
-              <Image src="/images/carousel/zicoJordTom.jpg"
-                     alt="Zico, Jord, and Tom playing against AFC Stockport"
-                     fluid
-                     rounded/>
-            </Carousel.Item>
-            <Carousel.Item className="rounded">
-              <Image src="/images/carousel/dcDanny.jpg"
-                     alt="DC, Jord, and Danny playing against AFC Stockport"
-                     fluid
-                     rounded/>
-            </Carousel.Item>
-            <Carousel.Item>
-              <Image src="/images/carousel/samMccall.jpg"
-                     alt="Sam playing against AFC Stockport" fluid rounded/>
-            </Carousel.Item>
-          </Carousel>
+          <CarouselContainer />
         </Row>
         <Row className="fs-5">
           <p> Welcome to the Withington Hope CF official website.</p>
@@ -43,27 +27,9 @@ const Home = () => (
         </Row>
       </Col>
       <Col lg={4} className="ms-lg-3">
-        <h3>Check out the Twitter:</h3>
-        <div className="twitterContainer mb-2">
-          <TwitterTweetEmbed
-              placeholder={<TwitterPlaceholder/>}
-              tweetId="1794711993431265773"/>
-        </div>
+        <TwitterContainer />
       </Col>
     </Row>
-);
-
-const TwitterPlaceholder = () => (
-    <Placeholder as="p" animation="wave">
-      <Placeholder className="w-100" size="lg"/>
-      <Placeholder className="w-75" size="lg"/>
-      <Placeholder className="w-100" size="lg"/>
-      <Placeholder className="w-50" size="lg"/>
-      <Placeholder className="w-100" size="lg"/>
-      <Placeholder className="w-75" size="lg"/>
-      <Placeholder className="w-100" size="lg"/>
-      <Placeholder className="w-50" size="lg"/>
-    </Placeholder>
 );
 
 export default Home;
