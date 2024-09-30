@@ -1,4 +1,4 @@
-import MatchesContainer from "../components/MatchesContainer";
+import MatchesContainer from "../components/fixtures/MatchesContainer";
 
 const Matches = () => (
     <MatchesContainer />

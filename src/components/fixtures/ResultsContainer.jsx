@@ -1,6 +1,6 @@
 import HighlightMatch from "./HighlightMatch";
 import {useSelector} from "react-redux";
-import {selectLastResult, selectResultsGroupedByMonth} from "../features/matches/matchSlice";
+import {selectLastResult, selectResultsGroupedByMonth} from "../../features/matches/matchSlice";
 import MatchGroup from "./MatchGroup";
 
 const ResultsContainer = () => {

@@ -1,5 +1,5 @@
 import {useSelector} from "react-redux";
-import {selectGroupedPlayers, useGetPlayersQuery} from "../features/players/playerSlice";
+import {selectGroupedPlayers, useGetPlayersQuery} from "../../features/players/playerSlice";
 import PlayerGroup from "./PlayerGroup";
 import {Spinner} from "react-bootstrap";
 
