@@ -1,4 +1,4 @@
-import {useGetMatchesQuery} from "../features/matches/matchSlice";
+import {useGetMatchesQuery} from "../../features/matches/matchSlice";
 import {Spinner} from "react-bootstrap";
 import FixtureContainer from "./FixtureContainer";
 import MatchesNavContainer from "./MatchesNavContainer";
