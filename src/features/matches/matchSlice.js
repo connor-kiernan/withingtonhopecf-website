@@ -13,7 +13,7 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
       query: () => "/matches",
       transformResponse: responseData => {
         responseData.map(match => match["kickOffDateTime"] = new Date(match["kickOffDateTime"]));
-        return matchesAdapter.setAll(initialState, responseData)
+        return matchesAdapter.setAll(initialState, responseData);
       },
       providesTags: {type: "Match", id: "LIST"}
     })
@@ -29,7 +29,7 @@ export const selectMatchesResult = extendedApiSlice.endpoints.getMatches.select(
 const selectMatchesData = createSelector(
     selectMatchesResult,
     matchesResult => {
-      return matchesResult.data
+      return matchesResult.data;
     }
 );
 
@@ -37,39 +37,48 @@ export const {
   selectAll: selectAllMatches
 } = matchesAdapter.getSelectors(state => selectMatchesData(state) ?? initialState);
 
-export const selectResults = createSelector(
+export const selectMatchesBySeason = season => createSelector(
     selectAllMatches,
-    matches => {
-      return matches.filter(match => match["played"]);
-    }
+    matches => matches.filter(match => match.season === season)
 );
 
-export const selectFixtures = createSelector(
-    selectAllMatches,
-    matches => {
-      return matches.filter(match => !match["played"]);
-    }
+export const selectResults = season => createSelector(
+    selectMatchesBySeason(season),
+    matches => matches.filter(match => match.played)
 );
 
-export const selectNextFixture = createSelector(
-    selectFixtures,
+export const selectFixtures = season => createSelector(
+    selectMatchesBySeason(season),
+    matches => matches.filter(match => !match.played)
+);
+
+export const selectNextFixture = season => createSelector(
+    selectFixtures(season),
     fixtures => fixtures[0]
 )
 
-export const selectLastResult = createSelector(
-    selectResults,
-    results => results[results.length -1]
-)
+export const selectLastResult = season => createSelector(
+    selectResults(season),
+    results => results[results.length - 1]
+);
 
-export const selectFixturesGroupedByMonth = createSelector(
-    selectFixtures,
+export const selectFixturesGroupedByMonth = season => createSelector(
+    selectFixtures(season),
     fixtures => groupByMonth(fixtures)
-)
+);
 
-export const selectResultsGroupedByMonth = createSelector(
-    selectResults,
+export const selectResultsGroupedByMonth = season => createSelector(
+    selectResults(season),
     results => groupByMonth(results)
-)
+);
+
+export const selectSeasons = createSelector(
+    selectAllMatches,
+    matches => {
+      return [...new Set(matches.map(match => match["season"]).sort(
+          (a, b) => parseInt(b.split("/")[0], 10) - parseInt(a.split("/")[0], 10)))];
+    }
+);
 
 function groupByMonth(matches) {
   return matches.reduce((group, result) => {

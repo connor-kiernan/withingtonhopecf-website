@@ -1,8 +1,6 @@
 import {useGetMatchesQuery} from "../../features/matches/matchSlice";
 import {Spinner} from "react-bootstrap";
-import FixtureContainer from "./FixtureContainer";
 import MatchesNavContainer from "./MatchesNavContainer";
-import ResultsContainer from "./ResultsContainer";
 
 const MatchesContainer = () => {
   const {
@@ -12,21 +10,22 @@ const MatchesContainer = () => {
     error
   } = useGetMatchesQuery();
 
-  let renderedContainer;
   if (isLoading) {
-    renderedContainer =
-        <Spinner animation="border" role="status" variant="secondary">
-          <span className="visually-hidden">Loading...</span>
-        </Spinner>;
-  } else if (isSuccess) {
-    renderedContainer = (
-        <MatchesNavContainer fixturesContainer={<FixtureContainer />} resultsContainer={<ResultsContainer />} />
-    );
-  } else if (isError) {
-    renderedContainer = <p>Unknown error when fetching matches: {JSON.stringify(error)}</p>;
+    return (<Spinner animation="border" role="status" variant="secondary">
+              <span className="visually-hidden">Loading...</span>
+            </Spinner>);
   }
 
-  return (renderedContainer);
+  if (isSuccess) {
+    return (
+        <MatchesNavContainer />
+    );
+  }
+
+  if (isError) {
+    return <p>Unknown error when fetching matches: {JSON.stringify(error)}</p>;
+  }
+
 };
 
 export default MatchesContainer;
