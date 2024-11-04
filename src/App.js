@@ -14,7 +14,7 @@ const App = () => {
   return (
       <>
         <Header/>
-        <Container className="flex-grow-1 d-flex flex-column justify-content-between">
+        <Container fluid="lg" className="flex-grow-1 d-flex flex-column justify-content-between">
           <main className="mt-4 d-flex flex-grow-1 flex-column">
             <Routes>
               <Route path="/" element={<Home/>}/>
