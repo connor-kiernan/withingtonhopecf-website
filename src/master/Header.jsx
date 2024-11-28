@@ -13,7 +13,7 @@ const Header = () => (
       <Container fluid="lg">
         <Row className="justify-content-between justify-content-sm-start align-items-center">
           <Col xs="auto">
-            <Image className="logo" src="/images/logo.png" alt="Withington Hope CF crest"/>
+            <Image className="logo" src="/images/logo.png" alt="Withington Hope CF crest" />
           </Col>
           <Col xs="auto" className="ms-0">
             <Navbar collapseOnSelect expand="sm" data-bs-theme="dark">
@@ -25,8 +25,8 @@ const Header = () => (
                 <Navbar.Offcanvas id="navbar" className="flex-sm-grow-0 bg-primary logo-margin" data-bs-theme={"dark"}
                                   placement="end">
                   <Offcanvas.Header closeButton>
-                    <Offcanvas.Title>
-                      Withington Hope Club de È
+                    <Offcanvas.Title className="fw-bold text-uppercase">
+                      Withington Hope CF
                     </Offcanvas.Title>
                   </Offcanvas.Header>
                   <Offcanvas.Body>

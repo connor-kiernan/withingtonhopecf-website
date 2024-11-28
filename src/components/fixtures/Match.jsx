@@ -1,5 +1,5 @@
 import {Col, Row} from "react-bootstrap";
-import Date from "./Date";
+import FormattedDate from "./FormattedDate";
 import FixtureDetails from "./FixtureDetails";
 import ResultDetails from "./ResultDetails";
 
@@ -14,12 +14,12 @@ const Match = ({isHomeGame, opponent, address, kickOffDateTime, played, homeGoal
       : <FixtureDetails homeTeam={homeTeam} awayTeam={awayTeam}/>;
 
   return (
-      <Row className="text-center align-items-center">
-        <Col lg={2}>
-          <p className="mb-lg-0 mb-2"><Date date={kickOffDateTime}/></p>
+      <Row className="text-center align-items-center matchRow">
+        <Col sm={2}>
+          <FormattedDate date={kickOffDateTime}/>
         </Col>
         <Col>{middleComponent}</Col>
-        <Col lg={2} className="text-capitalize">
+        <Col sm={2} className="text-capitalize">
           {addressComponents.map(addressSection =>
               (<p key={`${key}_${addressSection}`} className="mb-0">{addressSection}</p>)
           )}

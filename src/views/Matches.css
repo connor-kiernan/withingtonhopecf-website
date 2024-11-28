@@ -2,3 +2,64 @@
   color: var(--bs-nav-pills-link-active-color);
   background-color: var(--bs-nav-pills-link-active-bg);
 }
+
+.teamLabel {
+  align-items: center;
+  flex-direction: column-reverse;
+}
+
+.highlightTeamLogo {
+  height: 7rem;
+}
+
+.teamLogo {
+  height: 4rem
+}
+
+.highlight {
+  font-weight: 500 !important;
+  font-size: calc(1.375rem + 1.5vw);
+  line-height: 1.2;
+}
+
+.highlight .scorers {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 576px) {
+
+  .highlight {
+    font-weight: 500 !important;
+    font-size: 1.2rem
+  }
+
+  .highlight .score, .highlight .scorers {
+    font-size: 1.5rem;
+  }
+
+  .matchRow {
+    font-size: 0.8rem !important;
+  }
+
+  .matchRow .imageCol {
+    flex: 0 0 auto;
+    width: 33.33333333%;
+  }
+
+}
+
+@media (max-width: 356px) {
+
+  .highlight .img-fluid {
+    display: none;
+  }
+
+  .highlight {
+    font-weight: 500 !important;
+    font-size: 1rem
+  }
+
+  .highlight .score, .highlight .scorers {
+    font-size: 1rem;
+  }
+}
