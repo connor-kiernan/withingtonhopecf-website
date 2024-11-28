@@ -36,9 +36,9 @@ const MatchesNavContainer = () => {
             </InputGroup>
           </Col>
         </Row>
-        <ul className="nav nav-pills mb-5 justify-content-center" role="tablist">
+        <ul className="nav nav-pills mb-3 mb-sm-5 justify-content-center" role="tablist">
           {tabs.filter(tab => isCurrentSeason || tab !== "Fixtures").map(tab => (
-              <li className="nav-item" role="presentation">
+              <li key={tab} className="nav-item" role="presentation">
                 <button className={tab === activeTab ? activeLinkClass : linkClass} id={tab + "-tab"} type="button"
                         aria-controls={tab} onClick={({currentTarget: {id}}) => setActiveTab(id.split("-")[0])}>
                   <h2 className="mb-0">{tab}</h2>

@@ -11,10 +11,7 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
   endpoints: builder => ({
     getMatches: builder.query({
       query: () => "/matches",
-      transformResponse: responseData => {
-        responseData.map(match => match["kickOffDateTime"] = new Date(match["kickOffDateTime"]));
-        return matchesAdapter.setAll(initialState, responseData);
-      },
+      transformResponse: responseData => matchesAdapter.setAll(initialState, responseData),
       providesTags: {type: "Match", id: "LIST"}
     })
   })
@@ -82,7 +79,7 @@ export const selectSeasons = createSelector(
 
 function groupByMonth(matches) {
   return matches.reduce((group, result) => {
-    const month = result["kickOffDateTime"].toLocaleDateString("en-GB", {month: "long"});
+    const month = new Date(result["kickOffDateTime"]).toLocaleDateString("en-GB", {month: "long", year: "numeric"});
     (group[month] = group[month] || []).push(result);
 
     return group;

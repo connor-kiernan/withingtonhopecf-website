@@ -1,12 +1,12 @@
 import Match from "./Match";
 
 const MatchGroup = ({group, fixtures}) => {
-  fixtures = fixtures.map(fixture => (<Match key={fixture.id} {...fixture}/>)).reduce((prev, curr) => [prev, <hr key={prev}/>, curr])
+  fixtures = fixtures.map(fixture => <li key={fixture.id} className="list-group-item"><Match {...fixture}/></li>)
 
   return (
       <section className="mb-4">
         <h2 className="text-capitalize mb-2">{group}</h2>
-        {fixtures}
+        <ul className="list-group list-group-flush">{fixtures}</ul>
       </section>
   );
 };

@@ -1,14 +1,16 @@
 import {Col, Row} from "react-bootstrap";
-import ResultTeamScore from "./ResultTeamScore";
+import TeamLabel from "./TeamLabel";
+import Score from "./Score";
 
 const ResultDetails = ({homeTeam, awayTeam, homeGoals, awayGoals}) => {
   return (
-      <Row className="fs-3 gx-0">
-        <Col lg>
-          <ResultTeamScore team={homeTeam} goals={homeGoals} />
+      <Row className="fs-4 align-items-center">
+        <Col>
+          <TeamLabel team={homeTeam} />
         </Col>
-        <Col lg>
-          <ResultTeamScore team={awayTeam} goals={awayGoals} isAway={true}/>
+        <Col xs={"auto"}><Score homeGoals={homeGoals} awayGoals={awayGoals}></Score></Col>
+        <Col>
+          <TeamLabel team={awayTeam} isAway={true}/>
         </Col>
       </Row>
   );
