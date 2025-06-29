@@ -10,3 +10,9 @@ div:has(> .twitter-tweet) {
 #carouselContainer {
   margin: 0 -1rem;
 }
+
+.snippetMatch {
+  font-weight: 500 !important;
+  /*font-size: calc(1.375rem + 1.5vw);*/
+  /*line-height: 1.2;*/
+}

@@ -2,7 +2,7 @@ import {createEntityAdapter, createSelector} from "@reduxjs/toolkit";
 import {apiSlice} from "../../api/apiSlice";
 
 const matchesAdapter = createEntityAdapter({
-  sortComparer: (a, b) => a["kickOffDateTime"] - b["kickOffDateTime"]
+  sortComparer: ({kickOffDateTime: dateTimeA}, {kickOffDateTime: dateTimeB}) => new Date(dateTimeA) - new Date(dateTimeB)
 });
 
 const initialState = matchesAdapter.getInitialState({});

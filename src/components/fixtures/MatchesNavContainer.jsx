@@ -26,7 +26,7 @@ const MatchesNavContainer = () => {
 
   return (
       <>
-        <Row className="mb-4">
+        <Row className="mb-4 position-sm-absolute">
           <Col xs="auto">
             <InputGroup>
               <InputGroup.Text id="seasonLabel">Season</InputGroup.Text>

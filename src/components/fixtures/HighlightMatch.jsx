@@ -1,5 +1,6 @@
 import NextMatchTime from "./NextMatchTime";
 import LastMatchScore from "./LastMatchScore";
+import Competition from "./Competition";
 
 const HighlightMatch = ({
       isHomeGame,
@@ -9,7 +10,8 @@ const HighlightMatch = ({
       played,
       homeGoals,
       awayGoals,
-      withyGoalScorers
+      withyGoalScorers,
+      competition
     }) => {
       const withingtonHope = "Withington Hope";
       const [homeTeam, awayTeam] = isHomeGame ? [withingtonHope, opponent] : [opponent, withingtonHope];
@@ -23,6 +25,7 @@ const HighlightMatch = ({
       return (
           <section className="text-center mt-2 mb-5 mx-lg-n p-1 py-sm-4 rounded border highlightMatch">
             <h1>{heading}</h1>
+            <h4><Competition competition={competition} /></h4>
             <div className="d-flex justify-content-center fs-5 mb-4">
               <p>{new Date(kickOffDateTime).toLocaleDateString('en-GB', { day: 'numeric', month: 'short'})}, {address["line1"] ?? address["postcode"]}</p>
             </div>

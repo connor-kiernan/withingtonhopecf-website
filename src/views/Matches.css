@@ -16,7 +16,7 @@
   height: 4rem
 }
 
-.highlight {
+.highlightMatch .highlight {
   font-weight: 500 !important;
   font-size: calc(1.375rem + 1.5vw);
   line-height: 1.2;
@@ -24,6 +24,12 @@
 
 .highlight .scorers {
   font-size: 1.5rem;
+}
+
+@media (min-width: 576px) {
+  .position-sm-absolute {
+    position: absolute;
+  }
 }
 
 @media (max-width: 576px) {

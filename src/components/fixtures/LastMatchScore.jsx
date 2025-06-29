@@ -12,7 +12,7 @@ const LastMatchScore = ({homeTeam, awayTeam, homeGoals, awayGoals, isHomeGame, w
           <Col><TeamLabel team={awayTeam} isAway={true} /></Col>
         </Row>
         {withyGoalScorers &&
-            <Row className={`mt-2 ${flexDirection}`}>
+            <Row className={`mt-3 ${flexDirection}`}>
               <Col xs={6} className="px-0">
                 {Object.entries(withyGoalScorers)
                 .map(([player, count]) => (

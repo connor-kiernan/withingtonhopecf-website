@@ -6,8 +6,8 @@ const PlayerGroup = ({group, players}) => {
 
   return (
       <section className="mb-4">
-        <h2 className="text-capitalize">{group.toLowerCase() + ((group === "STAFF") ? "" : "s")}</h2>
-        <Row xs={1} md={3} lg={4} className="gy-1 gy-sm-4 gx-sm-2">
+        <h1 className="text-capitalize">{group === "STAFF" ? "Manager" : group.toLowerCase() + "s"}</h1>
+        <Row xs={2} sm={3} md={4} xl={5} xxl={5} className="gy-4 gx-3">
           {playerCards}
         </Row>
       </section>

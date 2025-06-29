@@ -26,27 +26,27 @@ const Contact = () => {
           <Form noValidate validated={validated} onSubmit={handleSubmit}>
             <Row>
               <Col lg={4} className="mb-2">
-                <Form.Select defaultValue="" required onChange={e => setSubject(e.target.value)}>
+                <Form.Select className="fs-4" defaultValue="" required onChange={e => setSubject(e.target.value)}>
                   <option value="" disabled>Enquiry Type</option>
                   <option value="Joining Withington Hope CF">Joining the club</option>
                   <option value="General enquiy about Withington Hope CF">General Enquiry</option>
                 </Form.Select>
               </Col>
               <Col>
-                <Form.Control as="textarea" required rows={10} placeholder="Enter your message here..." onChange={e => setBody(e.target.value)}/>
+                <Form.Control className="fs-4" as="textarea" required rows={10} placeholder="Enter your message here..." onChange={e => setBody(e.target.value)}/>
               </Col>
             </Row>
             <Row className="justify-content-center mt-4">
               <Col lg={6}>
                 <div className="d-grid">
-                  <Button type="submit" variant="primary">
+                  <Button className="fs-4" type="submit" variant="primary">
                     Send Message <i className="fa-regular fa-envelope" />
                   </Button>
                 </div>
               </Col>
             </Row>
           </Form>
-          <Row className="mt-5 pt-5">
+          <Row className="mt-5 pt-5 fs-4">
             <Col>
               <h3>Other ways to get in touch</h3>
               <ListGroup className="ms-lg-4 text-md-center" horizontal="md">
