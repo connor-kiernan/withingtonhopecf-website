@@ -8,7 +8,7 @@ import ResultsContainer from "./ResultsContainer";
 const MatchesNavContainer = () => {
   const seasons = useSelector(selectSeasons);
   const currentSeason = seasons[0];
-  const [selectedSeason, setSeason] = useState(currentSeason);
+  const [selectedSeason, setSelectedSeason] = useState(currentSeason);
 
   const isCurrentSeason = selectedSeason === currentSeason;
 
@@ -20,7 +20,7 @@ const MatchesNavContainer = () => {
   const activeLinkClass = "nav-link active"
 
   const onSeasonChange = ({currentTarget: {value}}) => {
-    setSeason(value)
+    setSelectedSeason(value)
     setActiveTab(value !== currentSeason ? "Results" : "Fixtures")
   };
 

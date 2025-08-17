@@ -3,6 +3,7 @@ import "./Home.css";
 import TwitterContainer from "../components/TwitterContainer";
 import CarouselContainer from "../components/carousel/CarouselContainer";
 import FixtureSnippetContainer from "../components/fixtures/snippet/FixtureSnippetContainer";
+import {NavLink} from "react-router-dom";
 
 const Home = () => (
     <Row className="justify-content-evenly">
@@ -18,7 +19,7 @@ const Home = () => (
           </p>
           <p>
             The club plays in the Manchester Saturday Morning Football League and its home ground is the mighty Hough End
-            Playing Fields. <a href="/about">Read our full story&nbsp;&rarr;</a>
+            Playing Fields. <NavLink to="/about">Read our full story&nbsp;&rarr;</NavLink>
           </p>
         </Row>
         <Row className="mt-4">

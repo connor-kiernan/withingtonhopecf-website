@@ -1,7 +1,7 @@
-import Match from "./Match";
+import MatchRow from "./MatchRow";
 
 const MatchGroup = ({group, fixtures}) => {
-  fixtures = fixtures.map(fixture => <li key={fixture.id} className="list-group-item"><Match {...fixture}/></li>)
+  fixtures = fixtures.map(fixture => <li key={fixture.id} className="list-group-item"><MatchRow {...fixture}/></li>)
 
   return (
       <section className="mb-4">

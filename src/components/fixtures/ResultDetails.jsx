@@ -1,19 +1,18 @@
-import {Col, Row} from "react-bootstrap";
-import TeamLabel from "./TeamLabel";
 import Score from "./Score";
+import {MatchDetails} from "./MatchDetails";
+import GoalScorers from "./GoalScorers";
 
-const ResultDetails = ({homeTeam, awayTeam, homeGoals, awayGoals}) => {
+const ResultDetails = ({homeTeamDetails, awayTeamDetails}) => {
+  const middleComponent = <Score homeGoals={homeTeamDetails.goals} awayGoals={awayTeamDetails.goals} isHighlight={false}/>
+
   return (
-      <Row className="fs-4 align-items-center">
-        <Col>
-          <TeamLabel team={homeTeam} />
-        </Col>
-        <Col xs={"auto"}><Score homeGoals={homeGoals} awayGoals={awayGoals}></Score></Col>
-        <Col>
-          <TeamLabel team={awayTeam} isAway={true}/>
-        </Col>
-      </Row>
-  );
+    <>
+      <MatchDetails homeTeamDetails={homeTeamDetails} awayTeamDetails={awayTeamDetails} middleComponent={middleComponent}/>
+      <div className="goal-scorers">
+        <GoalScorers homeGoalScorers={homeTeamDetails.goalScorers} awayGoalScorers={awayTeamDetails.goalScorers} />
+      </div>
+    </>
+  )
 }
 
 export default ResultDetails;

@@ -11,7 +11,7 @@ const Competition = ({competition}) => {
     case "friendly":
       return <span>Friendly {friendlyIcon}</span>;
     default:
-      return ""
+      return <span>{competition}</span>
 
   }
 }

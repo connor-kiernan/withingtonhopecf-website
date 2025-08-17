@@ -3,69 +3,170 @@
   background-color: var(--bs-nav-pills-link-active-bg);
 }
 
-.teamLabel {
+.highlight-match, .snippet-match {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: auto auto auto auto auto;
+  grid-template-areas:
+    "heading          heading          heading"
+    "competition      competition      competition"
+    "address          address          address"
+    "home-team-crest  middle-component away-team-crest"
+    "home-team-name   middle-component away-team-name"
+    "scorers          scorers          scorers";
+  justify-items: center;
   align-items: center;
-  flex-direction: column-reverse;
+  justify-content: center;
+  gap: 0.5rem;
+  text-align: center;
 }
 
-.highlightTeamLogo {
-  height: 7rem;
+.heading {
+  grid-area: heading;
 }
 
-.teamLogo {
-  height: 4rem
+.competition {
+  grid-area: competition;
 }
 
-.highlightMatch .highlight {
-  font-weight: 500 !important;
-  font-size: calc(1.375rem + 1.5vw);
-  line-height: 1.2;
+.match-row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas:
+    "date-competition date-competition date-competition"
+    "home-team-crest  middle-component away-team-crest"
+    "home-team-name   middle-component away-team-name"
+    "address          address          address";
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-align: center;
 }
 
-.highlight .scorers {
-  font-size: 1.5rem;
+.address {
+  grid-area: address;
 }
 
+.date-competition {
+  grid-area: date-competition;
+}
+
+.middle-component {
+  grid-area: middle-component;
+}
+
+.team-name {
+  margin-top: 0.3rem;
+  font-weight: bold;
+}
+
+.crest {
+  width: 60%;
+  justify-self: center;
+}
+
+.highlight-match .crest {
+  width: 80%;
+}
+
+.home-team-crest {
+  grid-area: home-team-crest;
+}
+
+.away-team-crest {
+  grid-area: away-team-crest;
+}
+
+.home-team-name {
+  grid-area: home-team-name;
+}
+
+.away-team-name {
+  grid-area: away-team-name;
+}
+
+.name {
+  font-size: calc(1.275rem + .3vw) !important;
+}
+
+.highlight-match .name {
+  font-size: calc(1.3rem + .6vw) !important;
+}
+
+.goal-scorers {
+  grid-area: scorers;
+  display: grid;
+  grid-template-columns: auto auto 0.4fr auto auto;
+  grid-auto-flow: column;
+  justify-self: stretch;
+}
+
+.home-scorer-name {
+  grid-column: 1;
+  text-align: right;
+}
+
+.home-scorer-icon {
+  grid-column: 2;
+  text-align: right;
+}
+
+.away-scorer-icon {
+  grid-column: 4;
+  text-align: left;
+}
+
+.away-scorer-name {
+  grid-column: 5;
+  text-align: left;
+}
+
+/* Wide layout: crest moves between name and middle-component */
 @media (min-width: 576px) {
-  .position-sm-absolute {
-    position: absolute;
+
+  .highlight-match {
+    grid-template-columns: 2fr 1fr auto 1fr 2fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+    "heading        heading          heading          heading         heading"
+    "competition    competition      competition      competition     competition"
+    "address        address          address          address         address"
+    "home-team-name home-team-crest  middle-component away-team-crest away-team-name"
+    "scorers        scorers          scorers          scorers         scorers";
+    }
+
+  .match-row {
+    grid-template-columns: 1fr 2fr 1fr auto 1fr 2fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "date-competition home-team-name home-team-crest middle-component away-team-crest away-team-name address";
+  }
+
+  .crest {
+    width: 80%;
+  }
+
+  .snippet-match .crest {
+    width: 60%;
+  }
+
+  .home-team-name {
+    justify-self: end;
+  }
+
+  .away-team-name {
+    justify-self: start;
+  }
+
+  .highlight-match .name {
+    font-size: 1.75rem !important;
   }
 }
 
-@media (max-width: 576px) {
-
-  .highlight {
-    font-weight: 500 !important;
-    font-size: 1.2rem
-  }
-
-  .highlight .score, .highlight .scorers {
-    font-size: 1.5rem;
-  }
-
-  .matchRow {
-    font-size: 0.8rem !important;
-  }
-
-  .matchRow .imageCol {
-    flex: 0 0 auto;
-    width: 33.33333333%;
-  }
-
-}
-
-@media (max-width: 356px) {
-
-  .highlight .img-fluid {
-    display: none;
-  }
-
-  .highlight {
-    font-weight: 500 !important;
-    font-size: 1rem
-  }
-
-  .highlight .score, .highlight .scorers {
-    font-size: 1rem;
+@media (min-width: 768px) {
+  .highlight-match .name {
+    font-size: 3rem !important;
   }
 }

@@ -44,9 +44,3 @@ body {
 .nav-pills {
   --bs-nav-pills-link-active-bg: var(--bs-primary)
 }
-
-@media (min-width: 992px) {
-  .mx-lg-n {
-    margin: 0 -3rem;
-  }
-}

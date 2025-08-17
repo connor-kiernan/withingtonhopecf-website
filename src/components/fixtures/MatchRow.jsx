@@ -1,25 +1,32 @@
-import {Col, Row} from "react-bootstrap";
 import DateAndCompetition from "./DateAndCompetition";
 import FixtureDetails from "./FixtureDetails";
 import ResultDetails from "./ResultDetails";
 
-const Match = ({isHomeGame, opponent, address, kickOffDateTime, played, homeGoals, awayGoals, competition, key}) => {
+const MatchRow = ({isHomeGame, opponent, address, kickOffDateTime, played, homeGoals, awayGoals, competition, key}) => {
   const withingtonHope = "Withington Hope";
   const [homeTeam, awayTeam] = isHomeGame ? [withingtonHope, opponent] : [opponent, withingtonHope];
 
   const addressComponents = [address["line1"], address["line2"], address["postcode"].toUpperCase()];
 
-  const middleComponent = played ?
-      <ResultDetails homeTeam={homeTeam} awayTeam={awayTeam} homeGoals={homeGoals} awayGoals={awayGoals}/>
-      : <FixtureDetails homeTeam={homeTeam} awayTeam={awayTeam}/>;
+  const homeTeamDetails = {
+    name: homeTeam,
+    goals: homeGoals,
+  }
+
+  const awayTeamDetails = {
+    name: awayTeam,
+    goals: awayGoals,
+  }
+
+  const details = played ?
+      <ResultDetails homeTeamDetails={homeTeamDetails} awayTeamDetails={awayTeamDetails} />
+      : <FixtureDetails homeTeamDetails={homeTeamDetails} awayTeamDetails={awayTeamDetails}/>;
 
   return (
-      <Row className="text-center align-items-center matchRow gy-3">
-        <Col sm={2}>
-          <DateAndCompetition date={kickOffDateTime} competition={competition}/>
-        </Col>
-        <Col>{middleComponent}</Col>
-        <Col sm={2} className="text-capitalize fs-6">
+      <div className="match-row">
+        <DateAndCompetition date={kickOffDateTime} competition={competition}/>
+        {details}
+        <div className="text-capitalize fs-6 address">
           <div className="d-none d-sm-block">
             {addressComponents.map(addressSection =>
                 (<p key={`${key}_${addressSection}`} className="mb-0">{addressSection}</p>)
@@ -28,9 +35,9 @@ const Match = ({isHomeGame, opponent, address, kickOffDateTime, played, homeGoal
           <div className="d-block d-sm-none">
             <p>{addressComponents.join(", ")}</p>
           </div>
-        </Col>
-      </Row>
+        </div>
+      </div>
   );
 };
 
-export default Match;
+export default MatchRow;

@@ -9,7 +9,7 @@ const DateAndCompetition = ({date, withTime=true, competition}) => {
 
 
   return (
-    <Row className="text-center text-sm-start justify-content-center gx-2 fs-5">
+    <Row className="text-center text-sm-start justify-content-center gx-2 fs-5 date-competition">
       <Col xs="auto" sm={12} className="fw-semibold"><p className="mb-0">{dateString}</p></Col>
       {withTime && <Col xs="auto" sm={12} ><p className="mb-0">{formattedDate.toLocaleTimeString('en-GB', {timeStyle: 'short', hour12: true})}</p></Col>}
       <Col xs={"auto"} sm><span className="d-inline d-sm-none">&#9679;</span> <Competition competition={competition} /></Col>
