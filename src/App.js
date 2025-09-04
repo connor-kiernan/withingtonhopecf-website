@@ -1,4 +1,5 @@
 import "./App.css";
+import "./Matches.css"
 import {Navigate, Route, Routes} from "react-router-dom";
 import Home from "./views/Home";
 import About from "./views/About";
