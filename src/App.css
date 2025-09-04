@@ -7,6 +7,14 @@
   --bs-link-hover-color: #15508c;
 }
 
+html {
+  font-size: 12px;
+}
+
+body {
+  font-family: 'Montserrat', "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
 #root {
   height: 100vh;
 }
@@ -35,10 +43,4 @@
 
 .nav-pills {
   --bs-nav-pills-link-active-bg: var(--bs-primary)
-}
-
-@media (min-width: 992px) {
-  .mx-lg-n {
-    margin: 0 -3rem;
-  }
 }

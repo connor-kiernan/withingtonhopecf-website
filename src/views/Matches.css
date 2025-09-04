@@ -2,3 +2,202 @@
   color: var(--bs-nav-pills-link-active-color);
   background-color: var(--bs-nav-pills-link-active-bg);
 }
+
+.highlight-match, .snippet-match {
+  display: grid;
+  grid-template-columns: 1fr auto auto 1fr;
+  grid-template-rows: auto auto auto auto auto auto;
+  grid-template-areas:
+    "heading          heading          heading          heading"
+    "competition      competition      competition      competition"
+    "address          address          address          address"
+    "home-team-crest  middle-component middle-component away-team-crest"
+    "home-team-name   middle-component middle-component away-team-name"
+    "home-scorers     home-scorers     away-scorers     away-scorers";
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+  row-gap: 0.5rem;
+  column-gap: 0.25rem;
+  text-align: center;
+}
+
+.heading {
+  grid-area: heading;
+}
+
+.competition {
+  grid-area: competition;
+}
+
+.match-row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas:
+    "date-competition date-competition date-competition"
+    "home-team-crest  middle-component away-team-crest"
+    "home-team-name   middle-component away-team-name"
+    "address          address          address";
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.address {
+  grid-area: address;
+}
+
+.date-competition {
+  grid-area: date-competition;
+}
+
+.middle-component {
+  grid-area: middle-component;
+}
+
+.team-name {
+  margin-top: 0.3rem;
+  font-weight: bold;
+}
+
+.crest {
+  width: 60%;
+  justify-self: center;
+}
+
+.highlight-match .crest {
+  width: 80%;
+}
+
+.home-team-crest {
+  grid-area: home-team-crest;
+}
+
+.away-team-crest {
+  grid-area: away-team-crest;
+}
+
+.home-team-name {
+  grid-area: home-team-name;
+}
+
+.away-team-name {
+  grid-area: away-team-name;
+}
+
+.name {
+  font-size: calc(1.275rem + .3vw) !important;
+}
+
+.highlight-match .name {
+  font-size: calc(1.3rem + .6vw) !important;
+}
+
+.scorers {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-auto-flow: dense;
+  gap: 0.5rem;
+  justify-self: stretch;
+  align-self: start;
+  font-size: 1.2rem !important;
+}
+
+.home-scorers {
+  justify-content: end;
+  grid-area: home-scorers;
+  padding-right: 1rem;
+}
+
+.away-scorers {
+  justify-content: start;
+  grid-area: away-scorers;
+  padding-left: 1rem;
+}
+
+.home-scorer-name {
+  grid-column: 1;
+  text-align: right;
+}
+
+.home-scorer-icon {
+  grid-column: 2;
+  text-align: right;
+}
+
+.away-scorer-icon {
+  grid-column: 1;
+  text-align: left;
+}
+
+.away-scorer-name {
+  grid-column: 2;
+  text-align: left;
+}
+
+/* Wide layout: crest moves between name and middle-component */
+@media (min-width: 576px) {
+
+  .highlight-match {
+    grid-template-columns: 2fr 1fr auto 1fr 2fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+    "heading        heading          heading          heading         heading"
+    "competition    competition      competition      competition     competition"
+    "address        address          address          address         address"
+    "home-team-name home-team-crest  middle-component away-team-crest away-team-name"
+    "home-scorers   home-scorers     .                away-scorers    away-scorers";
+    }
+
+  .match-row {
+    grid-template-columns: 1fr 2fr 1fr auto 1fr 2fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "date-competition home-team-name home-team-crest middle-component away-team-crest away-team-name address";
+  }
+
+  .crest {
+    width: 80%;
+  }
+
+  .snippet-match .crest {
+    width: 60%;
+  }
+
+  .home-team-name {
+    justify-self: end;
+  }
+
+  .away-team-name {
+    justify-self: start;
+  }
+
+  .highlight-match .name {
+    font-size: 1.75rem !important;
+  }
+
+  .scorers {
+    font-size: 1.25rem!important;
+  }
+
+  .home-scorers {
+    padding-right: 0;
+  }
+
+  .away-scorers {
+    padding-left: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .highlight-match .name {
+    font-size: 3rem !important;
+  }
+
+  .scorers {
+    font-size: 1.5rem!important;
+  }
+}

@@ -10,3 +10,13 @@ div:has(> .twitter-tweet) {
 #carouselContainer {
   margin: 0 -1rem;
 }
+
+.snippetMatch {
+  font-weight: 500 !important;
+}
+
+@media (min-width: 576px) {
+  .mw-50-sm {
+    margin-right: 50%;
+  }
+}
