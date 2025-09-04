@@ -32,7 +32,7 @@ const HighlightMatch = ({
       };
 
       const details = played ?
-          <ResultDetails homeTeamDetails={homeTeamDetails} awayTeamDetails={awayTeamDetails} />
+          <ResultDetails homeTeamDetails={homeTeamDetails} awayTeamDetails={awayTeamDetails} isHighlight={true} />
           : <FixtureDetails homeTeamDetails={homeTeamDetails} awayTeamDetails={awayTeamDetails} kickOffDateTime={kickOffDateTime} isHighlight={true}/>;
 
       return (

@@ -1,11 +1,16 @@
 import VipCard from "../components/players/VipCard";
 import "./About.css";
 import {Row} from "react-bootstrap";
+import Image from "react-bootstrap/Image";
 
 const About = () => (
     <>
       <h1>Our Story</h1>
       <Row className="fs-5">
+        <figure className="text-center">
+          <Image fluid src={"/images/2021-squad.png"} />
+          <figcaption className={"small text-secondary"}>The 21/22 Withington Hope Squad</figcaption>
+        </figure>
         <p>Founded in 2020 by Giorgio Arnetoli, Alex Gunn, Sam Hargraves, and Harry Clarke, Withington Hope Club de Fútbol is
           a men's football team based in Manchester, with Hough End as its home ground. Created by four friends on a whim,
           the team initially consisted of mutual friends who lived locally. This initial recruitment process led to one of

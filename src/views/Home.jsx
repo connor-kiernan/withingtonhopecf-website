@@ -2,8 +2,8 @@ import {Col, Row, Stack} from "react-bootstrap";
 import "./Home.css";
 import TwitterContainer from "../components/TwitterContainer";
 import CarouselContainer from "../components/carousel/CarouselContainer";
-import FixtureSnippetContainer from "../components/fixtures/snippet/FixtureSnippetContainer";
 import {NavLink} from "react-router-dom";
+import FixtureSnippet from "../components/fixtures/snippet/FixtureSnippet";
 
 const Home = () => (
     <Row className="justify-content-evenly">
@@ -24,7 +24,7 @@ const Home = () => (
         </Row>
         <Row className="mt-4">
           <Col>
-            <FixtureSnippetContainer />
+            <FixtureSnippet />
           </Col>
         </Row>
       </Col>

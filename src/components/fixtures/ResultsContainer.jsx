@@ -2,10 +2,12 @@ import HighlightMatch from "./HighlightMatch";
 import {useSelector} from "react-redux";
 import {selectLastResult, selectResultsGroupedByMonth} from "../../features/matches/matchSlice";
 import MatchGroup from "./MatchGroup";
+import {useOutletContext} from "react-router-dom";
 
-const ResultsContainer = ({season, isCurrentSeason}) => {
-  const lastResult = useSelector(selectLastResult(season));
-  const resultsGroupedByMonth = useSelector(selectResultsGroupedByMonth(season));
+const ResultsContainer = () => {
+  const {selectedSeason, isCurrentSeason} = useOutletContext();
+  const lastResult = useSelector(selectLastResult(selectedSeason));
+  const resultsGroupedByMonth = useSelector(selectResultsGroupedByMonth(selectedSeason));
 
   if (!lastResult) {
     return <><p>Sorry, there are no results to display</p><p>Check back soon!</p></>

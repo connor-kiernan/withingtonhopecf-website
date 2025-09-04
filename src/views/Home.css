@@ -13,6 +13,10 @@ div:has(> .twitter-tweet) {
 
 .snippetMatch {
   font-weight: 500 !important;
-  /*font-size: calc(1.375rem + 1.5vw);*/
-  /*line-height: 1.2;*/
+}
+
+@media (min-width: 576px) {
+  .mw-50-sm {
+    margin-right: 50%;
+  }
 }

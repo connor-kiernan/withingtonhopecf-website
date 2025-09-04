@@ -1,31 +1,36 @@
-import {useState} from "react";
+import {useEffect} from "react";
 import {useSelector} from "react-redux";
 import {selectSeasons} from "../../features/matches/matchSlice";
 import {Col, Form, InputGroup, Row} from "react-bootstrap";
-import FixtureContainer from "./FixtureContainer";
-import ResultsContainer from "./ResultsContainer";
+import {NavLink, Outlet, useLocation, useNavigate, useSearchParams} from "react-router-dom";
 
 const MatchesNavContainer = () => {
   const seasons = useSelector(selectSeasons);
   const currentSeason = seasons[0];
-  const [selectedSeason, setSelectedSeason] = useState(currentSeason);
 
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const selectedSeason = searchParams.get("season") ?? currentSeason;
   const isCurrentSeason = selectedSeason === currentSeason;
 
-  const [activeTab, setActiveTab] = useState("Fixtures");
-
-  const tabs = ["Fixtures", "Results"];
-
-  const linkClass = "nav-link";
-  const activeLinkClass = "nav-link active"
-
   const onSeasonChange = ({currentTarget: {value}}) => {
-    setSelectedSeason(value)
-    setActiveTab(value !== currentSeason ? "Results" : "Fixtures")
+    if (value === currentSeason) {
+      setSearchParams({});
+    } else {
+      setSearchParams({ season: value });
+    }
   };
 
-  return (
-      <>
+  useEffect(() => {
+    if (!isCurrentSeason && location.pathname.endsWith("/fixtures")) {
+      navigate("results?" + searchParams.toString(), { replace: true });
+    }
+  }, [isCurrentSeason, location.pathname, searchParams, navigate]);
+
+  return (<>
         <Row className="mb-4 position-sm-absolute">
           <Col xs="auto">
             <InputGroup>
@@ -37,21 +42,21 @@ const MatchesNavContainer = () => {
           </Col>
         </Row>
         <ul className="nav nav-pills mb-3 mb-sm-5 justify-content-center" role="tablist">
-          {tabs.filter(tab => isCurrentSeason || tab !== "Fixtures").map(tab => (
-              <li key={tab} className="nav-item" role="presentation">
-                <button className={tab === activeTab ? activeLinkClass : linkClass} id={tab + "-tab"} type="button"
-                        aria-controls={tab} onClick={({currentTarget: {id}}) => setActiveTab(id.split("-")[0])}>
-                  <h2 className="mb-0">{tab}</h2>
-                </button>
-              </li>
-          ))}
+          {isCurrentSeason && <li className="nav-item">
+            <NavLink to="fixtures" className={({isActive}) => isActive ? "nav-link active" : "nav-link"}>
+              <h2 className="mb-0">Fixtures</h2>
+            </NavLink>
+          </li>
+          }
+          <li>
+            <NavLink className={({isActive}) => isActive ? "nav-link active" : "nav-link"} to="results">
+              <h2 className="mb-0">Results</h2>
+            </NavLink>
+          </li>
         </ul>
-        {activeTab === "Fixtures" ?
-            <FixtureContainer season={selectedSeason}/> :
-            <ResultsContainer season={selectedSeason} isCurrentSeason={isCurrentSeason}/>
-        }
+
+        <Outlet context={{ selectedSeason, isCurrentSeason }} />
       </>
   );
 };
-
 export default MatchesNavContainer;

@@ -2,10 +2,13 @@ import {selectFixturesGroupedByMonth, selectNextFixture} from "../../features/ma
 import {useSelector} from "react-redux";
 import MatchGroup from "./MatchGroup";
 import HighlightMatch from "./HighlightMatch";
+import {useOutletContext} from "react-router-dom";
 
-const FixtureContainer = ({season}) => {
-  const nextFixture = useSelector(selectNextFixture(season));
-  const fixturesGroupedByMonth = useSelector(selectFixturesGroupedByMonth(season));
+const FixtureContainer = () => {
+  const { selectedSeason } = useOutletContext();
+
+  const nextFixture = useSelector(selectNextFixture(selectedSeason));
+  const fixturesGroupedByMonth = useSelector(selectFixturesGroupedByMonth(selectedSeason));
 
   if (!nextFixture) {
     return <><p>Sorry, there are no upcoming fixtures to display</p><p>Check back soon!</p></>

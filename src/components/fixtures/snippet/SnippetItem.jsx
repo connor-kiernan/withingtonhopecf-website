@@ -33,10 +33,14 @@ const SnippetItem = ({
       <FixtureDetails homeTeamDetails={homeTeamDetails} awayTeamDetails={awayTeamDetails} isHighlight={true}
                       kickOffDateTime={kickOffDateTime}/>;
 
+  const destination = played ? "/matches/results" : "/matches/fixtures"
+
   return (
-      <Link to="/matches" className="text-decoration-none text-reset">
+      <Link to={destination} className="text-decoration-none text-reset" onClick={() => {
+        window.scrollTo({ top: 0, behavior: "instant" });
+      }}>
         <section className="text-center snippet-match">
-          <h1 className="heading">{heading}&nbsp;&rarr;</h1>
+          <h1 className="heading text-decoration-underline">{heading}</h1>
           <h4 className="competition mb-0"><Competition competition={competition}/></h4>
           <div className="address d-flex justify-content-center fs-5">
             <p>{new Date(kickOffDateTime).toLocaleDateString("en-GB", {day: "numeric", month: "short"})}, {address["line1"]

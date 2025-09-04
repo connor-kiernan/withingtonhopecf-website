@@ -6,11 +6,14 @@ import SnippetItem from "./SnippetItem";
 const FixtureSnippet = () => {
   const seasons = useSelector(selectSeasons);
   const currentSeason = seasons[0];
-  const highlights = [useSelector(selectLastResult(currentSeason)), useSelector(selectNextFixture(currentSeason))];
+
+  const highlights = [useSelector(selectLastResult(currentSeason)), useSelector(selectNextFixture(currentSeason))].filter(item => item);
+
+  const className = highlights.length === 2 ? "" : "mw-50-sm"
 
   return (
       <ListGroup horizontal="sm">
-        {highlights.map((fixture) => <ListGroup.Item><SnippetItem {...fixture} /></ListGroup.Item>)}
+        {highlights.map((fixture) => <ListGroup.Item className={className}><SnippetItem {...fixture} /></ListGroup.Item>)}
       </ListGroup>
   )
 }

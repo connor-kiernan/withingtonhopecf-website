@@ -5,19 +5,20 @@
 
 .highlight-match, .snippet-match {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  grid-template-rows: auto auto auto auto auto;
+  grid-template-columns: 1fr auto auto 1fr;
+  grid-template-rows: auto auto auto auto auto auto;
   grid-template-areas:
-    "heading          heading          heading"
-    "competition      competition      competition"
-    "address          address          address"
-    "home-team-crest  middle-component away-team-crest"
-    "home-team-name   middle-component away-team-name"
-    "scorers          scorers          scorers";
+    "heading          heading          heading          heading"
+    "competition      competition      competition      competition"
+    "address          address          address          address"
+    "home-team-crest  middle-component middle-component away-team-crest"
+    "home-team-name   middle-component middle-component away-team-name"
+    "home-scorers     home-scorers     away-scorers     away-scorers";
   justify-items: center;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  row-gap: 0.5rem;
+  column-gap: 0.25rem;
   text-align: center;
 }
 
@@ -95,12 +96,26 @@
   font-size: calc(1.3rem + .6vw) !important;
 }
 
-.goal-scorers {
-  grid-area: scorers;
+.scorers {
   display: grid;
-  grid-template-columns: auto auto 0.4fr auto auto;
-  grid-auto-flow: column;
+  grid-template-columns: auto auto;
+  grid-auto-flow: dense;
+  gap: 0.5rem;
   justify-self: stretch;
+  align-self: start;
+  font-size: 1.2rem !important;
+}
+
+.home-scorers {
+  justify-content: end;
+  grid-area: home-scorers;
+  padding-right: 1rem;
+}
+
+.away-scorers {
+  justify-content: start;
+  grid-area: away-scorers;
+  padding-left: 1rem;
 }
 
 .home-scorer-name {
@@ -114,12 +129,12 @@
 }
 
 .away-scorer-icon {
-  grid-column: 4;
+  grid-column: 1;
   text-align: left;
 }
 
 .away-scorer-name {
-  grid-column: 5;
+  grid-column: 2;
   text-align: left;
 }
 
@@ -134,7 +149,7 @@
     "competition    competition      competition      competition     competition"
     "address        address          address          address         address"
     "home-team-name home-team-crest  middle-component away-team-crest away-team-name"
-    "scorers        scorers          scorers          scorers         scorers";
+    "home-scorers   home-scorers     .                away-scorers    away-scorers";
     }
 
   .match-row {
@@ -163,10 +178,26 @@
   .highlight-match .name {
     font-size: 1.75rem !important;
   }
+
+  .scorers {
+    font-size: 1.25rem!important;
+  }
+
+  .home-scorers {
+    padding-right: 0;
+  }
+
+  .away-scorers {
+    padding-left: 0;
+  }
 }
 
 @media (min-width: 768px) {
   .highlight-match .name {
     font-size: 3rem !important;
+  }
+
+  .scorers {
+    font-size: 1.5rem!important;
   }
 }
